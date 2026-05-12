@@ -4,67 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="manifest.json">
-    <title>Shaddai Asados y Más - Caucasia</title>
+    <title>Shaddai Asados PWA</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="logo">
-            <img src="logo_shaddai.png" alt="Shaddai Logo">
-        </div>
-        <ul class="nav-links">
-            <li>INICIO</li>
-            <li>MENÚ</li>
-            <li>DOMICILIOS</li>
-            <li>CONTACTO</li>
-        </ul>
-    </nav>
+    <header class="hero-section">
+        <nav class="top-nav">
+            <img src="logo_shaddai.png" alt="Logo" class="main-logo">
+            <div class="menu-items">
+                <span>INICIO</span>
+                <span>MENÚ</span>
+                <span>DOMICILIOS</span>
+                <span>CONTACTO</span>
+            </div>
+        </nav>
 
-    <header class="hero">
         <div class="hero-content">
-            <h1>EL MEJOR ASADO DE CAUCASIA</h1>
+            <h1>EL MEJOR ASADO DE <span class="highlight">CAUCASIA</span></h1>
             <p>Sabor que se siente, tradición que nos hace únicos.</p>
-            <button onclick="enviarPedido()" class="btn-whatsapp">
-                PEDIR DOMICILIO POR WHATSAPP
+            <button class="btn-main" onclick="solicitarPedido('General')">
+                <i class="fab fa-whatsapp"></i> PEDIR DOMICILIO POR WHATSAPP
             </button>
         </div>
     </header>
 
-    <section class="lunch-special">
-        <div class="badge">De lunes a viernes</div>
+    <section class="lunch-box">
+        <span class="label">De lunes a viernes</span>
         <h2>ALMUERZO EJECUTIVO</h2>
-        <div class="price">$18.000</div>
-        <div class="includes">
+        <div class="price-tag">$18.000</div>
+        
+        <div class="ingredients">
             <p>INCLUYE:</p>
-            <div class="icons">
-                <span><i class="fas fa-bowl-rice"></i> Arroz</span>
-                <span><i class="fas fa-bowl-food"></i> Frijoles</span>
-                <span><i class="fas fa-leaf"></i> Ensalada</span>
-                <span><i class="fas fa-glass-water"></i> Guarapo</span>
-                <span><i class="fas fa-drumstick-bite"></i> Asado</span>
+            <div class="grid-icons">
+                <div class="item"><i class="fas fa-bowl-rice"></i><span>ARROZ</span></div>
+                <div class="item"><i class="fas fa-bowl-food"></i><span>FRÍJOLES</span></div>
+                <div class="item"><i class="fas fa-leaf"></i><span>ENSALADA</span></div>
+                <div class="item"><i class="fas fa-glass-water"></i><span>GUARAPO</span></div>
+                <div class="item"><i class="fas fa-drumstick-bite"></i><span>ASADO</span></div>
             </div>
         </div>
+        <button class="btn-order-lunch" onclick="solicitarPedido('Almuerzo Ejecutivo')">ORDENAR ESTE MENÚ</button>
     </section>
 
-    <footer class="contact-footer">
-        <div class="info">
-            <h3>ESTAMOS PARA SERVIRTE</h3>
-            <p>Haz tu pedido y disfruta el mejor asado en la comodidad de tu casa.</p>
+    <footer class="main-footer">
+        <h3>ESTAMOS PARA SERVIRTE</h3>
+        <p>Haz tu pedido y disfruta el mejor asado en la comodidad de tu casa.</p>
+        
+        <div class="contact-box">
+            <p class="contact-label">CONTÁCTANOS</p>
+            <a href="https://wa.me/573147098072" class="phone-link">
+                <i class="fab fa-whatsapp"></i> 314 709 8072
+            </a>
+            <p><i class="fas fa-location-dot"></i> Caucasia, Antioquia, Colombia</p>
+            <p class="thanks">¡Gracias por preferirnos! <i class="fas fa-heart"></i></p>
         </div>
-        <div class="whatsapp-info">
-            <p>CONTÁCTANOS</p>
-            <a href="tel:3147098072">314 709 8072</a>
-            <p>Caucasia, Antioquia, Colombia</p>
-            <p><i>¡Gracias por preferirnos!</i> ♡</p>
+
+        <div class="dev-credits">
+            Hecha por **VIBRAS POSITIVAS HM**
         </div>
     </footer>
-
-    <!-- Créditos de Autoría Obligatorios -->
-    <div class="credits">
-        Hecha por VIBRAS POSITIVAS HM
-    </div>
 
     <script src="app.js"></script>
 </body>
