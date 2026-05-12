@@ -1,20 +1,36 @@
 {
-  "name": "Shaddai Asados y Más",
+  "name": "Restaurante Shaddai - Asados y Más",
   "short_name": "Shaddai",
-  "start_url": "index.html",
+  "description": "Menú ejecutivo desde $18.000. Domicilios: 314 709 8072",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#ff5722",
+  "background_color": "#2e1508",
+  "theme_color": "#b84a0a",
+  "orientation": "portrait-primary",
+  "lang": "es",
+  "categories": ["food", "lifestyle"],
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "icons/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
-      "src": "icon-512.png",
+      "src": "icons/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Hacer un pedido",
+      "short_name": "Pedido",
+      "description": "Pide tu almuerzo ejecutivo",
+      "url": "./index.html",
+      "icons": [{ "src": "icons/icon-192.png", "sizes": "192x192" }]
     }
   ]
 }
