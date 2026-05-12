@@ -1,20 +1,40 @@
-function enviarPedido() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(position => {
-            const lat = position.coords.latitude;
-            const lon = position.coords.longitude;
-            const mensaje = `Hola Shaddai! Quiero pedir el Almuerzo Ejecutivo ($18.000). Mi ubicación: https://www.google.com/maps?q=${lat},${lon}`;
-            const url = `https://wa.me/573147098072?text=${encodeURIComponent(mensaje)}`;
-            window.open(url, '_blank');
-        }, () => {
-            alert("Para procesar su pedido, por favor active la geolocalización.");
-        });
-    } else {
-        alert("Su navegador no soporta geolocalización.");
+function solicitarPedido(producto) {
+    // 1. Validar si el navegador permite geolocalización
+    if (!navigator.geolocation) {
+        alert("Tu navegador no soporta geolocalización para el envío del pedido.");
+        return;
     }
+
+    // 2. Obtener ubicación
+    navigator.geolocation.getCurrentPosition((pos) => {
+        const lat = pos.coords.latitude;
+        const lon = pos.coords.longitude;
+        const googleMapsUrl = `https://www.google.com/maps?q=${lat},${lon}`;
+        
+        // 3. Configurar el mensaje
+        const numero = "573147098072";
+        const mensaje = encodeURIComponent(
+            `*NUEVO PEDIDO - SHADDAI*\n` +
+            `--------------------------\n` +
+            `*Producto:* ${producto}\n` +
+            `*Ubicación:* ${googleMapsUrl}\n` +
+            `--------------------------\n` +
+            `Enviado desde mi App Shaddai.`
+        );
+
+        // 4. Abrir WhatsApp
+        window.open(`https://wa.me/${numero}?text=${mensaje}`, '_blank');
+
+    }, (error) => {
+        alert("Para realizar el pedido es necesario activar el GPS y dar permisos de ubicación.");
+    });
 }
 
-// Registro del Service Worker para PWA
+// Registrar el Service Worker para que sea autoinstalable
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+            .then(reg => console.log('PWA Lista para usar', reg))
+            .catch(err => console.log('Error en registro', err));
+    });
 }
