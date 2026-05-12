@@ -1,0 +1,63 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: rgba(0,0,0,0.8);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('asado_fondo.jpg');
+    background-size: cover;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    color: #ff5722;
+    font-size: 3rem;
+}
+
+.btn-whatsapp {
+    background-color: #ff5722;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.lunch-special {
+    background-color: #1a1a1a;
+    padding: 40px 20px;
+    border-top: 4px solid #ff5722;
+}
+
+.price {
+    font-size: 2.5rem;
+    color: #ff5722;
+    background: #000;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.credits {
+    font-size: 0.8rem;
+    padding: 20px;
+    color: #666;
+    border-top: 1px solid #333;
+}
